@@ -28,6 +28,7 @@ export default function ReElement(functionalComponent, options) {
         _hooks = createHooks.call(this);
 
         disconnectedCallback() {
+            super.disconnectedCallback();
             this._subscriptions.forEach(cleanup => cleanup());
             this._subscriptions.clear();
         }

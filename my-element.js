@@ -1,13 +1,13 @@
 import { html, css } from 'lit-element';
 
-import { declareAction, declareAtom } from '@reatom/core'
+import { declareAction, declareAtom } from '@reatom/core';
 
 import ReElement from './reelement';
 
 const increment = declareAction();
 const countAtom = declareAtom(1, on => [
   on(increment, state => state + 1),
-])
+]);
 
 const properties = {
   name: { type: String },
@@ -36,7 +36,6 @@ function MyReElement({ name = 'User' }, hooks) {
       <slot></slot>
     `;
 }
-
 
 window.customElements.define(
   'my-element',
